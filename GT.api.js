@@ -19,7 +19,7 @@
 //SHA256 JS Implementation
 
 var Sha256 = {};
-Sha256.hash = function(e) {
+Sha256.hash = function(e){
     var n = [1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298];
     var r = [1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225];
     e += String.fromCharCode(128);
@@ -108,7 +108,8 @@ var GT = {};
 //Instantiate critical vars
 var app_id = 0;
 var secret = '';
-var queuedFuncs = [];
+var queued_funcs = [];
+var is_inited = false;
 
 /*
  *  Checks if GT is initialized, queues function if not
@@ -117,9 +118,9 @@ var queuedFuncs = [];
  *  @return Boolean
  */
 var checkInit = function(func, params) {
-    if (app_id === 0 || secret === '') {
+    if (is_inited) {
         var wrappedFunction = wrapFunction(func, GT, params);
-        queuedFuncs.push(wrappedFunction);
+        queued_funcs.push(wrappedFunction);
         return false;
     } else return true;
     //
@@ -160,7 +161,7 @@ var auth = function(callback) {
                 } else {
                     callback(false, json.errMsg);
                 }
-            } 
+            }
         };
         xhr.send(null);
     }
@@ -187,8 +188,9 @@ GT.init = function(params, callback) {
 
     auth(function(success, msg) {
         if (success) {
-            while (queuedFuncs.length > 0) {
-                (queuedFuncs.shift())();
+            is_inited = true;
+            while (queued_funcs.length > 0) {
+                (queued_funcs.shift())();
             }
             if (callback)
                 callback(success);
