@@ -33,7 +33,7 @@ Dette gør GT-Api klar til at bruges og informerer dig hvis din app ikke kunne i
 Efter du har initialiseret GT-Api kan du kalde vores åbne api med functionen GT.api:
 
 ```Javascript
-  GT.api(’REQUEST_URL’, ‘METODE’, function(response){
+  GT.api('REQUEST_URL', 'METODE', function(response){
 	   //TODO Handle response
   });
 ```
@@ -45,4 +45,4 @@ Hvor:
 * function(response) er den function der bliver kaldt, når din request er blevet udført, her kan du håndtere svaret fra Greenticket’s api.
 
 ##Greenticket queries
-De queries du kan kalde på Greenticket’s API kan findes http://docs.greenticketdk.apiary.io "her" (Ikke komplet). Din mulighed for at kalde de forskellige vil variere alt efter hvad Greenticket har givet dig adgang til.
+De queries du kan kalde på Greenticket’s API kan findes på http://docs.greenticketdk.apiary.io (Ikke komplet). Din mulighed for at kalde de forskellige vil variere alt efter hvad Greenticket har givet dig adgang til.
