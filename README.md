@@ -8,7 +8,7 @@ For at bruge Greenticket’s Javascript integration skal du først have oprettet
 Ved oprettelse får du leveret et App ID samt en Secret. Gem dem et sikkert sted, de skal bruges når du bruger SDK’et.
 
 ##Load Javascript SDK
-Start med at inkludere den seneste implementation af Greenticket’s Javascript SDK i bunden af dit “body” tag:
+Start med at inkludere den seneste implementation af Greenticket’s Javascript SDK i bunden af dit “body” tag (Du kan også vælge at hente SDK'et ned til din server ved at trykke på "Download Zip" her på siden):
 
 ```HTML
 <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/greenticket-dk/code/js/GT-Api-latest.min.js"></script>
