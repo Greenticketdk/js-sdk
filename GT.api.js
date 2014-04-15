@@ -123,9 +123,6 @@ var checkInit = function(func, params) {
         queued_funcs.push(wrappedFunction);
         return false;
     } else return true;
-    //
-    //  throw new Error('Missing init', 'Please initialize Greenticket SDK by calling GT.init({APP_ID, SECRET})');
-
 }
 
 /*
