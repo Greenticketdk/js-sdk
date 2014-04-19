@@ -11,15 +11,15 @@ Ved oprettelse får du leveret et App ID samt en Secret. Gem dem et sikkert sted
 Start med at inkludere den seneste implementation af Greenticket’s Javascript SDK i bunden af dit “body” tag (Du kan også vælge at hente SDK'et ned til din server ved at trykke på "Download Zip" her på siden):
 
 ```HTML
-<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/greenticket-dk/code/js/GT-Api-latest.min.js"></script>
+<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/greenticket-dk/code/js/GT-Latest.api.min.js"></script>
 ```
 Der er ikke brug for at hente andre libraries eller toolkits for at GT-Api virker.
 
 ##Initialiser GT-Api
 Efter du har inkluderet GT-Api skal du initialisere api’en:
 ```HTML
-<script type="text/javascript" src=“https://s3-eu-west-1.amazonaws.com/greenticket-dk/code/js/GT-Api-latest.min.js"></script>
-<script type=“text/javascript”>
+<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/greenticket-dk/code/js/GT-Latest.api.min.js"></script>
+<script type="text/javascript">
   GT.init({
     app_id: DIT_APP_ID,
 		secret: DIN_SECRET
