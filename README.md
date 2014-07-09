@@ -22,7 +22,7 @@ Efter du har inkluderet GT-Api skal du initialisere api’en:
 <script type="text/javascript">
   GT.init({
     app_id: DIT_APP_ID,
-		secret: DIN_SECRET
+    secret: DIN_SECRET
   });
 </script>
 ```
